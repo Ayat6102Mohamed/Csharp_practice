@@ -4,14 +4,27 @@
     {
         static void Main(string[] args)
         {
-            int a = 10, b = 3;
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine($"Addition: {Add(a, b)}");
-            Console.WriteLine($"Subtraction: {Subtract(a, b)}");
-            Console.WriteLine($"Multiplication: {Multiply(a, b)}");
-            int rem;
-            Console.WriteLine($"Division: {Divide(a, b, out rem)}, Remainder: {rem}");
-
+            Console.WriteLine("Enter first number:");
+            int a =int.TryParse(Console.ReadLine(),out x);
+            Console.WriteLine("Enter second number:");
+            int b = int.TryParse(Console.ReadLine(), out y);
+            Console.WriteLine("Enter operation (+, -, *, /):");
+            string op = Console.ReadLine();
+            switch (op) { 
+                case "+":
+                    Console.WriteLine($"Addition: {Add(a, b)}");
+                    break;
+                case "-":
+                    Console.WriteLine($"Subtraction: {Subtract(a, b)}");
+                    break;
+                case "*":
+                    Console.WriteLine($"Multiplication: {Multiply(a, b)}");
+                    break;
+                case "/":
+                    int rem;
+                    Console.WriteLine($"Division: {Divide(a, b, out rem)}, Remainder: {rem}");
+                    break;
+            }
         }
         static int Add(int a, int b)
         {
